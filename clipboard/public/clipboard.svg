@@ -1,0 +1,18 @@
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="128" height="128" rx="16" ry="16" fill="#000000"/>
+
+  <!-- Gradient for clipboard -->
+  <defs>
+    <linearGradient id="bluePurpleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4A00E0"/>
+      <stop offset="100%" stop-color="#00F0FF"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Clipboard body -->
+  <rect x="36" y="28" width="56" height="72" rx="8" ry="8" fill="url(#bluePurpleGradient)" stroke="#ffffff" stroke-width="2"/>
+
+  <!-- Clipboard clip -->
+  <rect x="48" y="16" width="32" height="16" rx="4" ry="4" fill="url(#bluePurpleGradient)" stroke="#ffffff" stroke-width="2"/>
+</svg>
