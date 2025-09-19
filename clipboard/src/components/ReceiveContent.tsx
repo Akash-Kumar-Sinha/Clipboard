@@ -55,35 +55,43 @@ const ReceiveContent = () => {
   };
 
   return (
-    <Card className="w-full flex flex-col gap-6 h-fit p-6 md:p-10 mx-auto">
+    <Card className="w-full flex flex-col gap-4 h-fit p-4 sm:p-6 md:p-8 mx-auto bg-[var(--color-card)] text-[var(--color-card-foreground)] border border-[var(--color-border)] rounded-xl shadow-sm">
       <CardHeader>
         <CardTitle>
-          <Label className="text-2xl font-bold mb-2">Receive Content</Label>
+          <Label className="text-xl sm:text-2xl font-bold mb-2">
+            Receive Content
+          </Label>
         </CardTitle>
       </CardHeader>
-      <div className="flex justify-between items-center">
+      <div className="flex flex-col sm:flex-row justify-between items-center gap-2">
         <Input
           type="text"
           placeholder="Enter code"
-          className="w-56 text-center font-mono text-xl"
+          className="w-full sm:w-56 text-center font-mono text-lg sm:text-xl"
           value={code || ""}
           onChange={(e) =>
             setCode(e.target.value ? parseInt(e.target.value) : null)
           }
         />
-        <Button onClick={handleReceive}>Receive</Button>
+        <Button
+          className="w-full sm:w-auto mt-2 sm:mt-0"
+          onClick={handleReceive}
+        >
+          Receive
+        </Button>
       </div>
       {type === "text" && (
         <div className="relative w-full">
           <Textarea
             placeholder="Received text will appear here"
-            className="w-full min-h-40 text-lg pr-10"
+            className="w-full min-h-32 max-h-72 text-base sm:text-lg pr-10 bg-[var(--color-input)] text-[var(--color-foreground)] border border-[var(--color-border)] rounded-md"
             readOnly
             value={content}
           />
-          
-            <Copy className="absolute right-2 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground cursor-pointer hover:text-foreground transition-colors"
-            onClick={copyText} />
+          <Copy
+            className="absolute right-2 top-1/2 -translate-y-1/2 h-5 w-5 text-[var(--color-muted-foreground)] cursor-pointer hover:text-[var(--color-foreground)] transition-colors"
+            onClick={copyText}
+          />
         </div>
       )}
       {type === "image" && (
@@ -91,7 +99,7 @@ const ReceiveContent = () => {
           <img
             src={`${SERVER_URL}${content}`}
             alt="Received"
-            className="max-w-full max-h-[420px] rounded-lg shadow-md"
+            className="max-w-full max-h-64 sm:max-h-80 rounded-lg shadow-md border border-[var(--color-border)] bg-[var(--color-muted)]"
           />
           <Button
             size="sm"
